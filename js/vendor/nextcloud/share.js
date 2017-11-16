@@ -198,10 +198,7 @@
 					'<input id="shareWith" type="text" placeholder="' + sharePlaceholder + '" />';
 				if (oc_appconfig.core.remoteShareAllowed) {
 					var federatedCloudSharingDoc =
-						'<span class="icon-info svg shareWithRemoteInfo hasTooltip" ' +
-						'title="' + t('gallery',
-							'Share with people on other servers using their Federated Cloud ID username@example.com/cloud') +
-						'"></span>';
+						'<span class="icon-confirm svg shareWithRemoteInfo"></span>';
 					html += federatedCloudSharingDoc;
 				}
 				html += '<span class="shareWithLoading icon-loading-small hidden"></span>';
@@ -286,11 +283,6 @@
 				html += '</div>';
 				dropDownEl = $(html);
 				dropDownEl = dropDownEl.appendTo(appendTo);
-
-				// trigger remote share info tooltip
-				if (oc_appconfig.core.remoteShareAllowed) {
-					$('.shareWithRemoteInfo').tooltip({placement: 'bottom'});
-				}
 
 				//Get owner avatars
 				if (oc_config.enable_avatars === true && data !== false && data[0] !== false &&
